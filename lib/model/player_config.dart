@@ -8,6 +8,7 @@ class PlayerConfig {
   // 单位:秒
   final int startTime;
   final Map<String, dynamic> auth;
+  final bool fullScreen;
 
   const PlayerConfig({
     this.autoPlay = true,
@@ -17,6 +18,7 @@ class PlayerConfig {
     this.progressInterval = 200,
     this.startTime,
     this.auth,
+    this.fullScreen = false,
   });
 
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -27,5 +29,6 @@ class PlayerConfig {
         'progressInterval': this.progressInterval,
         'startTime': this.startTime,
         'auth': this.auth,
+        "fullScreen": this.fullScreen,
       };
 }

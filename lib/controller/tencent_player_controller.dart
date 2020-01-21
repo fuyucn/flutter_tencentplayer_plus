@@ -8,6 +8,9 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
   final String dataSource;
   final DataSourceType dataSourceType;
   final PlayerConfig playerConfig;
+
+  bool isFullScreen;
+
   MethodChannel channel = TencentPlayer.channel;
 
   TencentPlayerController.asset(this.dataSource,
@@ -49,6 +52,10 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
     }
 
     value = value.copyWith(isPlaying: playerConfig.autoPlay);
+
+    // set default fullScreen value
+    value = value.copyWith(isFullScreen: false);
+
     dataSourceDescription.addAll(playerConfig.toJson());
 
     final Map<String, dynamic> response =
@@ -119,6 +126,14 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
       _lifeCycleObserver.dispose();
     }
     super.dispose();
+  }
+
+  Future<void> enterfullScreen() async {
+    value = value.copyWith(isFullScreen: true);
+  }
+
+  Future<void> exitFullScreen() async {
+    value = value.copyWith(isFullScreen: false);
   }
 
   Future<void> play() async {
