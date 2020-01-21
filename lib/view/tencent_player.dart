@@ -76,7 +76,7 @@ class _TencentPlayerState extends State<TencentPlayer> {
   @override
   void dispose() {
     print("TencentPlayer  dispose");
-    widget.controller.dispose();
+//     widget.controller.dispose();
     super.dispose();
   }
 }
