@@ -473,7 +473,7 @@ public class FlutterTencentplayerPlusPlugin implements MethodCallHandler {
       result.success(null);
       break;
     case "setMute":
-      boolean isMuted = ((Boolean) call.argument("isMuted"));
+      boolean isMuted = ((Boolean) call.argument("isMuted")).booleanValue();
       player.setMute(isMuted);
       result.success(null);
       break;
