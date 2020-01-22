@@ -136,6 +136,10 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
     value = value.copyWith(isFullScreen: false);
   }
 
+  Future<void> toggleFullScreen() {
+    value = value.copyWith(isFullScreen: !value.isFullScreen);
+  }
+
   Future<void> play() async {
     value = value.copyWith(isPlaying: true);
     await _applyPlayPause();
