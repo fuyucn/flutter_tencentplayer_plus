@@ -52,7 +52,8 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
     value = value.copyWith(isPlaying: playerConfig.autoPlay);
 
     // set default fullScreen value
-    value = value.copyWith(isFullScreen: false);
+    value = value.copyWith(isFullScreen: playerConfig.isMuted ?? false);
+    value = value.copyWith(isMuted: playerConfig.isMuted ?? false);
 
     dataSourceDescription.addAll(playerConfig.toJson());
 
