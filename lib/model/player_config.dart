@@ -8,7 +8,9 @@ class PlayerConfig {
   // 单位:秒
   final int startTime;
   final Map<String, dynamic> auth;
+
   final bool fullScreen;
+  final bool isMuted;
 
   const PlayerConfig({
     this.autoPlay = true,
@@ -19,6 +21,7 @@ class PlayerConfig {
     this.startTime,
     this.auth,
     this.fullScreen = false,
+    this.isMuted = false,
   });
 
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -30,5 +33,6 @@ class PlayerConfig {
         'startTime': this.startTime,
         'auth': this.auth,
         "fullScreen": this.fullScreen,
+        "isMuted": this.isMuted,
       };
 }

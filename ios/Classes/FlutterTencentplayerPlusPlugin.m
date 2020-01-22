@@ -148,6 +148,10 @@ NSObject<FlutterPluginRegistrar>* mRegistrar;
          player= nil;
         [_players removeObjectForKey:@(textureId)];
         result(nil);
+    }else if([@"setMute" isEqualToString:call.method]){
+        NSLog(@"set Mute or unMite player");
+        [player setMute:[[argsMap objectForKey:@"isMuted"] boolValue]];
+        result(nil);
     }else{
         result(FlutterMethodNotImplemented);
     }

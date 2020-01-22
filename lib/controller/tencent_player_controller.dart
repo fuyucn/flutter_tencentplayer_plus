@@ -9,8 +9,6 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
   final DataSourceType dataSourceType;
   final PlayerConfig playerConfig;
 
-  bool isFullScreen;
-
   MethodChannel channel = TencentPlayer.channel;
 
   TencentPlayerController.asset(this.dataSource,
@@ -208,6 +206,24 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
       'rate': rate,
     });
     value = value.copyWith(rate: rate);
+  }
+
+  Future<void> setMute(bool isMuted) async {
+    if (_isDisposed) {
+      return;
+    }
+    if (isMuted == null) {
+      return;
+    }
+    // if (isMuted > value.duration) {
+    //   moment = value.duration;
+    // } else if (moment < const Duration()) {
+    //   moment = const Duration();
+    // }
+    await channel.invokeMethod('setMute', <String, dynamic>{
+      'isMuted': isMuted,
+    });
+    value = value.copyWith(isMuted: isMuted);
   }
 }
 

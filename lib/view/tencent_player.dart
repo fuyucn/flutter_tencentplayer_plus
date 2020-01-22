@@ -37,7 +37,7 @@ class _TencentPlayerState extends State<TencentPlayer> {
 //    _textureId = widget.controller.textureId;
 //    widget.controller.addListener(_listener);
 
-    print("TencentPlayer  initState");
+    // print("TencentPlayer  initState");
   }
 
   @override
@@ -51,7 +51,7 @@ class _TencentPlayerState extends State<TencentPlayer> {
 
   @override
   void deactivate() {
-    print("TencentPlayer  deactivate");
+    // print("TencentPlayer  deactivate");
     super.deactivate();
 //    widget.controller.removeListener(_listener);
   }
@@ -75,7 +75,7 @@ class _TencentPlayerState extends State<TencentPlayer> {
 
   @override
   void dispose() {
-    print("TencentPlayer  dispose");
+    // print("TencentPlayer  dispose");
 //     widget.controller.dispose();
     super.dispose();
   }

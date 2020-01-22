@@ -12,6 +12,7 @@ class TencentPlayerValue {
   final double rate;
   final int bitrateIndex;
   final bool isFullScreen;
+  final bool isMuted;
 
   bool get initialized => duration.inMilliseconds != 0;
 
@@ -33,6 +34,7 @@ class TencentPlayerValue {
     this.rate = 1.0,
     this.bitrateIndex = 0, //TODO 默认清晰度,
     this.isFullScreen = false,
+    this.isMuted = false,
   });
 
   TencentPlayerValue copyWith(
@@ -46,7 +48,8 @@ class TencentPlayerValue {
       int netSpeed,
       double rate,
       int bitrateIndex,
-      bool isFullScreen}) {
+      bool isFullScreen,
+      bool isMuted}) {
     return TencentPlayerValue(
       duration: duration ?? this.duration,
       position: position ?? this.position,
@@ -59,6 +62,7 @@ class TencentPlayerValue {
       rate: rate ?? this.rate,
       bitrateIndex: bitrateIndex ?? this.bitrateIndex,
       isFullScreen: isFullScreen ?? this.isFullScreen,
+      isMuted: isMuted ?? this.isMuted,
     );
   }
 
