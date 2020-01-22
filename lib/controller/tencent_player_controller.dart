@@ -216,11 +216,6 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
     if (isMuted == null) {
       return;
     }
-    // if (isMuted > value.duration) {
-    //   moment = value.duration;
-    // } else if (moment < const Duration()) {
-    //   moment = const Duration();
-    // }
     await channel.invokeMethod('setMute', <String, dynamic>{
       'isMuted': isMuted,
     });

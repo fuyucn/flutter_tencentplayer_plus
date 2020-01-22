@@ -364,8 +364,6 @@
 }
 
 
-
-
 - (void)setRate:(float)rate{
     [_txPlayer setRate:rate];
 }
