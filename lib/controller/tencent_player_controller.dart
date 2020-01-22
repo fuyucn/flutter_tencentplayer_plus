@@ -217,6 +217,7 @@ class TencentPlayerController extends ValueNotifier<TencentPlayerValue> {
       return;
     }
     await channel.invokeMethod('setMute', <String, dynamic>{
+      'textureId': _textureId,
       'isMuted': isMuted,
     });
     value = value.copyWith(isMuted: isMuted);
